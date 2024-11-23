@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    padding: 0;
+    margin: 0;
+    background-color: var(--bg-clr);
+    font-family: "Sour Gummy", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    overflow-x: hidden;
+}
+:root{
+    --bg-clr: black;
+    --second--bg-clr: rgb(26, 26, 26);
+    --second--bg-clr2: rgb(192, 192, 192);
+    --main-clr: rgb(0, 238, 255);
+    --text-clr: white;
+}
+header{
+    position: fixed;
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    color: var(--text-clr);
+    background-color: var(--bg-clr);
+}
+header #animatedText{
+    text-shadow: 0 0 10px var(--main-clr);
+    font-size: 2em;
+    margin-top: 2%;
+    justify-content: center;
+    margin: 0 10% 0 10%;
+}
+#animatedText span{
+    display: inline-block;
+    opacity: 0;
+    animation: textAnimation 0.5s ease forwards;
+}
+@keyframes textAnimation{
+    to{
+        opacity: 1;
+    }
+}
+
+section{
+    width: 100%;
+    height: 100vh;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+}
+.container{
+    width: 80%;
+    height: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem;
+}
+.calcContainer{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+}
+.divDisplay{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 6rem;
+    background-color: var(--text-clr);
+    border: 1px solid var(--bg-clr);
+    color: var(--bg-clr);
+    overflow-x: auto;
+    overflow-y: hidden;
+    font-size: 2em;
+    font-weight: 600;
+    border-radius: 0.4rem;
+    transition: 0.5s ease;
+}
+.divDisplay::selection{
+    background-color: var(--main-clr);
+}
+#divMiniDisplay{
+    width: 40%;
+    height: 1.8rem;
+    background-color: var(--text-clr);
+    position: absolute;
+    transform: translateX(-40%) translateY(4%);
+    border-radius: 0 0.4rem 0 0;
+    font-size: smaller;
+    display: flex;
+    gap: 2px;
+}
+.divMiniDisplay{
+    background-color: var(--text-clr);
+    text-wrap: nowrap;
+    left: 2px;
+}
+#divMiniClickCount{
+    width: 20%;
+    height: 1.8rem;
+    background-color: var(--text-clr);
+    position: absolute;
+    transform: translateX(140%) translateY(4%);
+    border-radius: 0 0.4rem 0 0;
+    font-size: smaller;
+    display: flex;
+    gap: 2px;
+}
+.buttons{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    background-color: var(--bg-clr);
+    user-select: none;
+}
+.btnCase1{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: var(--text-clr);
+    z-index: 0;
+    display: grid;
+    grid-template-columns: repeat(1, 5fr);
+    border-radius: 0.4rem;
+    transition: 0.5s ease;
+    transform: translateX(0);
+    overflow: hidden;
+}
+.btnCase1 div{
+    display: flex;
+}
+.btnCase1 div button{
+    width: 25%;
+    border: none;
+    font-size: 1.4em;
+    font-family: "Sour Gummy", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    background-color: var(--text-clr);
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+.btnCase1 div button:hover{
+    background-color: var(--main-clr);
+}
+.btnCase1 div:nth-child(1) button,
+.btnCase1 div:nth-child(2) button:nth-child(4),
+.btnCase1 div:nth-child(3) button:nth-child(4),
+.btnCase1 div:nth-child(4) button:nth-child(4){
+    background-color: var(--second--bg-clr2);
+}
+.btnCase1 div:nth-child(5) button:nth-child(4){
+    background-color: var(--main-clr);
+}
+.btnCase1 div:nth-child(1) button:hover,
+.btnCase1 div:nth-child(2) button:nth-child(4):hover,
+.btnCase1 div:nth-child(3) button:nth-child(4):hover,
+.btnCase1 div:nth-child(4) button:nth-child(4):hover{
+    background-color: var(--text-clr);
+}
+.btnCase1 div:nth-child(5) button:nth-child(4):hover{
+    background-color: var(--second--bg-clr2);
+}
+.btnCase2{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: white;
+    z-index: -1;
+    display: grid;
+    grid-template-columns: repeat(1, 3fr);
+    border-radius: 0.4rem;
+    transition: 0.5s ease;
+}
+.btnCase2 div{
+    display: flex;
+}
+.btnCase2 div button{
+    width: 33.33%;
+    border-radius: 0.4rem;
+    border: none;
+    font-size: 1.4em;
+    font-family: "Sour Gummy", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    cursor: pointer;
+    transition: 0.5s ease;
+    background-color: var(--text-clr);
+}
+.btnCase2 div button:hover{
+    background-color: var(--main-clr);
+}
+.btnName{
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    position: absolute;
+    top: 98%;
+    justify-content: space-between;
+    text-align: center;
+}
+.btnName p{
+    color: var(--main-clr);
+    background-color: var(--second--bg-clr);
+    width: 100%;
+    text-align: center;
+    border-radius: 0.4rem;
+    transition: 0.5s ease;
+    padding: 4px 2px 0 0;
+    cursor: pointer;
+    text-align: center;
+}
+.btnName p:hover{
+    box-shadow: 0 0 10px;
+}
+.btnName p:hover{
+    background-color: var(--main-clr);
+    color: var(--text-clr);
+}
+
+@media(min-width: 1180px){
+    .container{
+        width: 60%;
+    }
+    #divMiniDisplay{
+        transform: translateX(-20%) translateY(4%);
+    }
+    #divMiniClickCount{
+        transform: translateX(320%) translateY(4%);
+        width: 8%;
+    }
+}
